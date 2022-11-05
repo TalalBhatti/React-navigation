@@ -2,6 +2,23 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  // function for sum
+  function sum(param1,param2){
+    return sum = param1 + param2;
+    // multiply(sum)
+  }
+
+  //function for alert
+  function showAlert(x){
+    alert(x)
+  }
+
+  // syntax for callback
+  let result = sum(5,5, showAlert)
+
+
+  mySecond();
+  myFirst();
   return (
     <div className="App">
       <header className="App-header">
