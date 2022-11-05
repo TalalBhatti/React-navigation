@@ -1,6 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
-
+import FirstPage from './components/firstPage';
+import SecondPage from './components/secondPage';
+import ThirdPage from './components/thirdPage';
+import PageNotFound from './components/pagenotfound'
+import { 
+  Route,
+  Routes,
+  BrowserRouter
+} from 'react-router-dom'
 function App() {
   // function for sum
   function sum(param1,param2){
@@ -17,25 +25,15 @@ function App() {
   let result = sum(5,5, showAlert)
 
 
-  mySecond();
-  myFirst();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route exact path='/' element={<FirstPage/>}/>
+        <Route path='/secondPage' element={<SecondPage/>}/>
+        <Route path='/thirdPage' element={<ThirdPage/>}/>
+        <Route path='/*'  element={<PageNotFound/>}/>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
