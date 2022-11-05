@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
-const firstPage = () => {
+const FirstPage = () => {
+
+    useEffect(()=>{
+       
+        fetch('https://api.npms.io/v2/search?q=react')
+        .then(res=>res.json())
+        .then(data=> console.log(data.results));
+   
+    },[])
+
     return(
         <div>
             <h1>
@@ -16,4 +25,4 @@ const firstPage = () => {
     )
 }
 
-export default firstPage;
+export default FirstPage;
